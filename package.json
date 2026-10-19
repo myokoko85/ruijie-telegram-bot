@@ -1,0 +1,16 @@
+{
+  "name": "ruijie-telegram-bot",
+  "version": "1.0.0",
+  "description": "Ruijie Hardware Warranty & Distributor Checker Telegram Bot",
+  "main": "telegram_bot.js",
+  "scripts": {
+    "start": "node telegram_bot.js"
+  },
+  "keywords": [
+    "ruijie",
+    "warranty",
+    "telegram-bot"
+  ],
+  "author": "",
+  "license": "ISC"
+}
