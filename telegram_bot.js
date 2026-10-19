@@ -541,11 +541,20 @@ ${statusEmoji} <b>အာမခံ အခြေအနေ:</b> <b>${result.status}
 🛠️ <b>Service Level:</b> ${result.serviceName}
 🔄 <b>စက်အမျိုးအစား:</b> ${result.isReplaced ? 'Replaced Unit' : 'မူရင်းစက် (Original Device)'}
 ━━━━━━━━━━━━━━━━━━━━
-<i>🔍 Ruijie Official Telemetry မှ အတည်ပြု စစ်ဆေးပေးထားပါသည်။</i>`;
+🛍️ <b>Sponsored by MKK Mobile Mandalay</b>
+Network စက်ပစ္စည်းများနှင့် Tech ပစ္စည်းများကို တရားဝင် အာမခံအပြည့်ဖြင့် ဝယ်ယူရန် -
+🌐 <b>Website:</b> https://mkk-mobile-store.vercel.app
+📞 <b>ဖုန်း:</b> 09779133500`;
 
     const inlineKeyboard = {
       reply_markup: {
         inline_keyboard: [
+          [
+            {
+              text: '🛒 MKK Mobile Store သို့ သွားရန်',
+              url: 'https://mkk-mobile-store.vercel.app'
+            }
+          ],
           [
             {
               text: '🌐 Ruijie Official Portal',
@@ -558,7 +567,29 @@ ${statusEmoji} <b>အာမခံ အခြေအနေ:</b> <b>${result.status}
 
     await sendMessage(chatId, replyMsg, inlineKeyboard);
   } else {
-    await sendMessage(chatId, `❌ <b>Serial Number (${sn})</b> အတွက် Warranty အချက်အလက် မတွေ့ရှိပါခင်ဗျာ။\n\nကျေးဇူးပြု၍ စက်၏ Label Sticker ပေါ်ရှိ SN စာလုံးပေါင်း မှန်/မမှန် ပြန်လည်စစ်ဆေးပေးပါ။`);
+    const notFoundMsg = `❌ <b>Serial Number (${sn})</b> အတွက် Warranty အချက်အလက် မတွေ့ရှိပါခင်ဗျာ။
+
+ကျေးဇူးပြု၍ စက်၏ Label Sticker ပေါ်ရှိ SN စာလုံးပေါင်း မှန်/မမှန် ပြန်လည်စစ်ဆေးပေးပါ။
+━━━━━━━━━━━━━━━━━━━━
+🛍️ <b>MKK Mobile Mandalay</b>
+Network စက်ပစ္စည်းများနှင့် Tech ပစ္စည်းများကို တရားဝင် အာမခံအပြည့်ဖြင့် ဝယ်ယူရန် -
+🌐 <b>Website:</b> https://mkk-mobile-store.vercel.app
+📞 <b>ဖုန်း:</b> 09779133500`;
+
+    const notFoundKeyboard = {
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: '🛒 MKK Mobile Store သို့ သွားရန်',
+              url: 'https://mkk-mobile-store.vercel.app'
+            }
+          ]
+        ]
+      }
+    };
+
+    await sendMessage(chatId, notFoundMsg, notFoundKeyboard);
   }
 }
 
